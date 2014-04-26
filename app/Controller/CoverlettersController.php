@@ -21,7 +21,8 @@ class CoverlettersController extends AppController {
                 $this->set('coverletters', $this->Coverletter->find('all' , array(
                     'conditions' => array(
                         'Coverletter.scheduled_test_date_time <' => date('Y-m-d', strtotime(' +1 day')),
-                        'Coverletter.scheduled_test_date_time >' => date('Y-m-d', strtotime(' -1 day'))
+                        'Coverletter.scheduled_test_date_time >' => date('Y-m-d', strtotime(' -1 day')),
+                        'Coverletter.status' => 'submitted'
                     ))));                 
             } else {
                 $this->set('coverletters', $this->Coverletter->find('all'));

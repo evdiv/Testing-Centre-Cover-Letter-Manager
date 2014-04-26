@@ -81,7 +81,8 @@ public function beforeFilter() {
     $schedulled_coverletters = $this->Coverletter->find('count', array(
         'conditions' => array(
            'Coverletter.scheduled_test_date_time <' => date('Y-m-d', strtotime(' +1 day')),
-           'Coverletter.scheduled_test_date_time >' => date('Y-m-d', strtotime(' -1 day'))
+           'Coverletter.scheduled_test_date_time >' => date('Y-m-d', strtotime(' -1 day')),
+           'Coverletter.status' => 'submitted'
         )
     ));
     
